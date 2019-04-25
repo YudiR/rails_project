@@ -1,0 +1,22 @@
+<h1> All of your posts </h1>
+
+<% if @items.any? %>
+
+<% @items.each do |item| %> 
+
+
+<p>Title: <%=item.title %> </p> 
+
+<p> Location: <%=item.location %> </p>
+
+<p>Category: <%=item.category %> </p>
+
+<p>Price: <%=item.price %> </p> 
+
+<p>Description: <%=item.description %> </p> 
+
+<% else %>
+
+<p> you have not posted any items yet. </p> 
+
+<% end %>

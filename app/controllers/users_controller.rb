@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   class UserController < ApplicationController
-    before_action :require_ownership, only: [:edit, :update]
-  
+    before_action :require_ownership, only: [:edit, :update, :items]
+    
     def new
       @user = User.new
     end
