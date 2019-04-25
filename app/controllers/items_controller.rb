@@ -40,6 +40,9 @@ class ItemsController < ApplicationController
   redirect_to root_path
   end
 
+  def about 
+  end
+
 private 
   def item_params
     params.require(:item).permit(:image, :category, :title, :description, :price)  

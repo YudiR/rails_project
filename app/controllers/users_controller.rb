@@ -37,6 +37,11 @@ class UsersController < ApplicationController
         render :edit
       end
     end
+
+    def items
+      @user = current_user
+      @items= @user.items
+    end
   
     def require_owner
       @user = User.find(params[:id])
