@@ -1,22 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  get 'users/create'
-  get 'users/edit'
-  get 'users/update'
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
-  get 'user/new'
-  get 'user/create'
-  get 'user/edit'
-  get 'user/update'
-  get 'user/destroy'
-  get 'items/index'
-  get 'items/new'
-  get 'items/create'
-  get 'items/edit'
-  get 'items/update'
-  get 'items/show'
-  get 'items/destroy'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ 
+  resources :users, only: [:new, :create, :edit, :update, :items]
+  resources :items
+  resources :sessions, only: [:new, :create, :destroy]
+
+  root 'items#index'
 end
