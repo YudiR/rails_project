@@ -1,6 +1,8 @@
-<h1> All of your posts </h1>
+<% if current_user == nil   %>
+    <p> You are not signed in. </p>
+<% elsif @items.items.any? %> 
 
-<% if @items.any? %>
+<h1> All of your posts </h1>
 
 <% @items.each do |item| %> 
 
@@ -16,7 +18,7 @@
 <p>Description: <%=item.description %> </p> 
 
 <% else %>
-
 <p> you have not posted any items yet. </p> 
 
+<% end %>
 <% end %>

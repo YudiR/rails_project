@@ -26,11 +26,13 @@ class UsersController < ApplicationController
   
     def edit
       @user = User.find(params[:id])
+      # @user = present user 
     end
   
     def update
       @user = User.find(params[:id])
-  
+      # @user = present user
+      # if present users password match given password -
       if @user.update_attributes(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
         redirect_to root_path
       else
@@ -39,7 +41,7 @@ class UsersController < ApplicationController
     end
 
     def items
-      @user = current_user
+      @user = User.find(params[:id])
       @items= @user.items
     end
   
