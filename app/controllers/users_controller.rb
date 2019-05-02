@@ -25,19 +25,19 @@ class UsersController < ApplicationController
     end
   
     def edit
-      @user = User.find(params[:id])
-      # @user = present user 
+      @user = current_user
+      # User.find(params[:id])
     end
   
     def update
-      @user = User.find(params[:id])
-      # @user = present user
-      # if present users password match given password -
+      @user = current_user 
+      # User.find(params[:id])
+      
       if @user.update_attributes(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
         redirect_to root_path
       else
         render :edit
-      end
+      end      # @user = present user 
     end
 
     def items
