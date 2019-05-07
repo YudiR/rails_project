@@ -1,7 +1,10 @@
-<h1> this view is not working :)</h1>
-<% @items.each do |item| %> 
-   <p> <%= item.title %> </p> 
-   <p> <%= item.price %> </p>
-    <p> <%= item.description%> </p>
+<h1> Items to be Taken: <h1>
 
+<% @items.each do |item| %> 
+   <h3>Title: </h3><p> <%= item.title %> </p> 
+   <h3>Price:</h3><p><%= item.price %> </p>
+   <h3>Category:</h3><p><%=item.category %> </p>
+   <h3>Location: </h3><p><%= item.location%> </p>
+   <h3>Description: </h3><p><%= item.description%> </p>
+   <p>--------------------------------------------------------------------------------</p>
 <% end %>

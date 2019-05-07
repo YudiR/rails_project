@@ -11,8 +11,11 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
+      flash.now[:alert] = @item.errors.full_messages
       redirect_to root_path
     else
+      flash.now[:alert] = @item.errors.full_messages
+
       render :new
     end
   end
@@ -31,6 +34,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @user = @item.user
     render :show
   end
 
@@ -45,7 +49,7 @@ class ItemsController < ApplicationController
 
 private 
   def item_params
-    params.require(:item).permit(:image, :category, :title, :description, :price, user_id: current_user)  
+    params.require(:item).permit(:image, :category, :location, :title, :description, :price, user: current_user)  
   end
 
 end

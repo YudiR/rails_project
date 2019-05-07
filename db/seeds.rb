@@ -3,8 +3,10 @@ Item.delete_all
 
  yudi = User.create(
     name: 'yudi',
-    email: 'yudrose@gmail.com'
+    email: 'yudrose@gmail.com',
+    password: 'yudi'
 )
+
 
 # yudi.items.create( title: 'frech fries',
 # price: 55,
@@ -14,6 +16,6 @@ yudi_pizza = Item.create(
     title: 'pizza slice',
     price: 55,
     description: "yummy",
-    user_id: User.last
+    user_id: User.last.id
 )
 

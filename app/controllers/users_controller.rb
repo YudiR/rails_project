@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   
     def update
       @user = current_user 
-      # User.find(params[:id])
+       User.find(params[:id])
       
       if @user.update_attributes(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
         redirect_to root_path
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
     def items
       @user = User.find(params[:id])
-      @items= @user.items
+      # @items= @user.items
     end
   
     def require_owner

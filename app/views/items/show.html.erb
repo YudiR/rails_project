@@ -1,2 +1,12 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1> Item to be Taken: <h1>
+ 
+   <h3>Title: </h3><p> <%= @item.title %> </p> 
+   <h3>Price:</h3><p><%= @item.price %> </p>
+   <h3>Category:</h3><p><%=@item.category %> </p>
+   <h3>Location: </h3><p><%= @item.location%> </p>
+   <h3>Description: </h3><p><%= @item.description%> </p>
+
+<h1> The Giver: </h1>
+
+    <h3>Name:</h3><p><%=@user.name %></p>
+    <h3>Email:</h3><p> <%=@user.email %></p>
