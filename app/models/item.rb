@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+    monetize :price_cents 
+    
     belongs_to :user
     has_and_belongs_to_many :users
 

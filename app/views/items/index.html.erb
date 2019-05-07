@@ -2,7 +2,7 @@
 
 <% @items.each do |item| %> 
    <h3>Title: </h3><p> <%= item.title %> </p> 
-   <h3>Price:</h3><p><%= item.price %> </p>
+   <h3>Price:</h3><p><%=  humanized_money_with_symbol item.price %> </p>
    <h3>Category:</h3><p><%=item.category %> </p>
    <h3>Location: </h3><p><%= item.location%> </p>
    <h3>Description: </h3><p><%= item.description%> </p>
