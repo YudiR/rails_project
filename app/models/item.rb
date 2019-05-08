@@ -1,4 +1,14 @@
 class Item < ApplicationRecord
+
+    def self.search(search)
+        if search
+            where(["title LIKE ?", "%#{search}%"])
+        else 
+            all
+        end
+    end
+
+
     monetize :price_cents 
     
     belongs_to :user
