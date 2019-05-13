@@ -4,23 +4,10 @@
 
 <h3> Search the titles</h3>
 
-<%= form_tag items_path, method: :get do %>
-    <%= text_field_tag :title, params[:title] %>
-    <%= text_field_tag :category, params[:category] %>
-    <%= submit_tag "Search", name: nil %>
+<%= form_tag(items_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search")%>
 <% end %>
-
-<%=form_tag searches_path, :method => 'get' do%>
-<%=text_field_tag :search ,params[:search]%>
-<%= submit_tag "search"%>
-<%end%>
-
-<%-#<%=form_tag searches_path, :method => 'get' do%>
-<%=text_field_tag :search ,params[:search]%>
-<%= submit_tag "search"%>
-<%end%>-%>
-
-<%= link_to "Advanced Search", new_search_path %>
 
 <% @items.each do |item| %> 
    <h3>Title: </h3><p> <%= item.title %> </p> 
