@@ -1,5 +1,8 @@
 class Item < ApplicationRecord
 
+    # enum category: [ :electronics, :jewelry, :kitchen,  :womens_clothing, :mens_clothing, :watches,
+    # :sports_and_outdoors]
+
     def self.search(search)
         if search
             item = Item.find_by(title: search)
@@ -14,6 +17,9 @@ class Item < ApplicationRecord
         
         end
     end
+
+
+    
 
     monetize :price_cents 
     

@@ -19,3 +19,16 @@ yudi_pizza = Item.create(
     user_id: User.last.id
 )
 
+# Faker::Number.between(0, 6)
+
+50.times do 
+    Item.create(
+    title: Faker::Device.model_name,
+    category:Faker::Device.manufacturer,
+    description: 'very good condtion',
+    price:  Faker::Commerce.price ,
+    location: Faker::Address.city,
+    user_id: User.last.id)
+end
+
+

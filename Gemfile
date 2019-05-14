@@ -27,8 +27,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'money-rails'
+gem 'money-rails', '~> 1.12'
 
+# below for search
+gem 'faker'
+gem 'bootstrap', '~> 4.3.1'
+gem 'ransack'
+gem 'will_paginate-bootstrap4'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
