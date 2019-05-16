@@ -12,12 +12,12 @@ Item.delete_all
 # price: 55,
 # description: "yummy",)
 
-yudi_pizza = Item.create(
-    title: 'pizza slice',
-    price: 55,
-    description: "yummy",
-    user_id: User.last.id
-)
+# yudi_pizza = Item.create(
+#     title: 'pizza slice',
+#     price_cents: 55.00,
+#     description: "yummy",
+#     user_id: User.last.id
+# )
 
 # Faker::Number.between(0, 6)
 
@@ -26,7 +26,7 @@ yudi_pizza = Item.create(
     title: Faker::Device.model_name,
     category:Faker::Device.manufacturer,
     description: 'very good condtion',
-    price:  Faker::Commerce.price ,
+    price_cents: Faker::Number.between(10, 250) ,
     location: Faker::Address.city,
     user_id: User.last.id)
 end

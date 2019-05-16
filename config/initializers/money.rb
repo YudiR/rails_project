@@ -1,7 +1,7 @@
 # encoding : utf-8
 
-MoneyRails.configure do |config|
-  config.default_currency = :cad 
+# MoneyRails.configure do |config|
+  # config.default_currency = :cad 
 
   # To set the default currency
   #
@@ -90,4 +90,4 @@ MoneyRails.configure do |config|
   #
   # Example:
   # config.raise_error_on_money_parsing = false
-end
+# end
