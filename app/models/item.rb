@@ -18,10 +18,11 @@ class Item < ApplicationRecord
         end
     end
 
-
+# shrine:
+include ImageUploader[:image]
     
 
-    # monetize :price_cents 
+
     
     belongs_to :user
     has_and_belongs_to_many :users

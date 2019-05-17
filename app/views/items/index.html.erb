@@ -2,12 +2,12 @@
 
 
 
-<h3> Search the titles</h3>
+<h3> Search the Items</h3>
 
 <%= search_form_for @q do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title_cont, class: 'form-control' %>
-    <%= f.submit class: 'btn btn-primary' %>
+    
     
 
     <div class="form-group"><%= f.label :category %>
@@ -20,6 +20,8 @@
     <%= f.label :price_cents_qteq, "Least Amount" %><%= f.text_field :price_cents_gteq, class: 'form-control' %>
     <%= f.label :price_cents_lteq, "Most Amount" %><%= f.text_field :price_cents_lteq, class: 'form-control' %></div>
 
+
+    <%= f.submit class: 'btn btn-primary' %>
 <% end %>
 
     <%= link_to "Clear", request.path, class: "btn btn-default" %>
