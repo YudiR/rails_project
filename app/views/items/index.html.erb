@@ -28,9 +28,13 @@
 <% @items.each do |item| %> 
    <h3>Title: </h3><p> <%= item.title %> </p> 
    <h3>Price:</h3><p> $<%=item.price_cents %> </p>
+   <h3>Image:</3> <% if item.image.present?%>
+   <%= image_tag item.image_url %>
+   <% end %>
    <h3>Category:</h3><p><%=item.category %> </p>
    <h3>Location: </h3><p><%= item.location%> </p>
    <h3>Description: </h3><p><%= item.description%> </p>
+   
    <p>--------------------------------------------------------------------------------</p>
 <% end %>
 

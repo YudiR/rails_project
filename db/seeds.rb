@@ -20,15 +20,20 @@ Item.delete_all
 # )
 
 # Faker::Number.between(0, 6)
+uploader = ImageUploader.new(:store)
+file = File.new(Rails.root.join('app/assets/images/seed/clouds.png'))
+uploaded_file = uploader.upload(file)
 
-50.times do 
+10.times do 
     Item.create(
     title: Faker::Device.model_name,
     category:Faker::Device.manufacturer,
-    description: 'very good condtion',
+    description: 'good',
+    image_data: uploaded_file.to_json ,
     price_cents: Faker::Number.between(10, 250) ,
     location: Faker::Address.city,
     user_id: User.last.id)
 end
+
 
 

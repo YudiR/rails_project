@@ -5,6 +5,18 @@
     </div>
 
     <div>
+    <% if @item.image.present?%>
+    <%= image_tag @item.image_url
+    <% end%>
+    </div>
+
+    <div> 
+    <%=f.label :image %>
+    <%= f.hidden_field :image, value: @item.cached_image_data%>
+    <%= f.file_field :image%>
+    </div>
+
+    <div>
       <%= f.label :Location %>
       <%= f.text_field :location %>
     </div>
