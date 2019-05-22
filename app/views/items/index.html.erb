@@ -24,12 +24,13 @@
     <%= f.submit class: 'btn btn-primary' %>
 <% end %>
 
+
     <%= link_to "Clear", request.path, class: "btn btn-default" %>
 <% @items.each do |item| %> 
-   <h3>Title: </h3><p> <%= item.title %> </p> 
+    <h3>Title: </h3><h5> <%= link_to item.title,  "/items/#{item.id}" %>  </h5> 
    <h3>Price:</h3><p> $<%=item.price_cents %> </p>
-   <h3>Image:</3> <% if item.image.present?%>
-   <%= image_tag item.image_url %>
+   <h3>Image:</3> <br>  <% if item.image.present?%>
+   <%= link_to image_tag(item.image_url) , "/items/#{item.id}"  %>
    <% end %>
    <h3>Category:</h3><p><%=item.category %> </p>
    <h3>Location: </h3><p><%= item.location%> </p>
@@ -38,4 +39,6 @@
    <p>--------------------------------------------------------------------------------</p>
 <% end %>
 
+<% about = "about" %>
+<h1> <%= link_to  about , "/items/about" %> </h1>
 

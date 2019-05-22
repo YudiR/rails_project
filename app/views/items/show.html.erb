@@ -2,9 +2,16 @@
  
    <h3>Title: </h3><p> <%= @item.title %> </p> 
    <h3>Price:</h3><p>$<%=  @item.price_cents %> </p>
+   <h3>Image:</h3>   <%= image_tag @item.image_url %>
    <h3>Category:</h3><p><%=@item.category %> </p>
    <h3>Location: </h3><p><%= @item.location%> </p>
    <h3>Description: </h3><p><%= @item.description%> </p>
+
+<% if @item.user == current_user%> 
+
+<p> <%= link_to "edit post" , edit_item_path(@item)%></p>
+<p> <%= link_to "delete post", item_path(@item), method: :delete %></p>
+<% end %>
 
 <h1> The Giver: </h1>
 

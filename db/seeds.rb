@@ -21,7 +21,7 @@ Item.delete_all
 
 # Faker::Number.between(0, 6)
 uploader = ImageUploader.new(:store)
-file = File.new(Rails.root.join('app/assets/images/seed/clouds.png'))
+file = File.new(Rails.root.join('app/assets/images/seed/sharp.jpg'))
 uploaded_file = uploader.upload(file)
 
 10.times do 

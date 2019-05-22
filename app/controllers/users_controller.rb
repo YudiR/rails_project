@@ -45,10 +45,10 @@ class UsersController < ApplicationController
       # @items= @user.items
     end
   
-    def require_owner
-      @user = User.find(params[:id])
+    def require_ownership
+      @item = Item.find(params[:id])
       
-      unless current_user == @user.id
+      unless current_user == @item.user
         flash[:alert] = "You are not the user of this account"
         redirect_to root_path
       end
