@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :require_ownership, only: [:edit, :update, :destroy]
+
   def index
     @q = Item.ransack(params[:q])
     @items = @q.result
@@ -48,6 +50,16 @@ class ItemsController < ApplicationController
 
   def about 
   end
+
+  def require_ownership
+    @item = Item.find(params[:id])
+    
+    unless current_user == @item.user
+      flash[:alert] = "You are not the user of this account"
+      redirect_to root_path
+    end
+  end
+
 
 private 
   def item_params
