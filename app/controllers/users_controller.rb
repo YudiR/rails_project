@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  class UserController < ApplicationController
-    before_action :require_ownership, only: [:edit, :update, :items]
+      before_action :require_ownership, only: [:edit, :update, :items]
     
     def new
       @user = User.new
+      
     end
   
     def create
@@ -41,7 +41,10 @@ class UsersController < ApplicationController
     end
 
     def items
+      # @items = current_user.items 
+
       @user = User.find(params[:id])
+      # render :items
       # @items= @user.items
     end
   
@@ -56,4 +59,4 @@ class UsersController < ApplicationController
   
   end
   
-end
+

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  
-  resources :searches
+  
   
   resources :users, only: [:new, :create, :edit, :update] do
     collection do

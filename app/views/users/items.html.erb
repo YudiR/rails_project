@@ -1,11 +1,12 @@
-<% if current_user == nil   %>
+
+ <% if current_user == nil   %>
     <p> You are not signed in. </p>
- <% elsif @user.items.any?  %> 
+ <% elsif current_user.items.empty?  %> 
     <p> you have not posted any items yet. </p> 
 <% else %>
 <h1> All of your posts </h1>
 
-<% @user.items.each do |item| %> 
+<% current_user.items.reverse.each do |item| %> 
 
 
 <p>Title: <%= link_to item.title, "/items/#{item.id}" %> </p> 
@@ -19,11 +20,12 @@
 <p>Price: $<%=item.price_cents %> </p> 
 
 <p>Description: <%=item.description %> </p> 
-
-
-
-
-
-
 <% end %>
-<% end %>
+<% end %> 
+
+
+
+
+
+
+<% puts @items %>

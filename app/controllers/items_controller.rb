@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
 
     if @item.save
       flash.now[:alert] = @item.errors.full_messages
@@ -50,7 +51,7 @@ class ItemsController < ApplicationController
 
 private 
   def item_params
-    params.require(:item).permit(:image, :category, :location, :title, :price_cents, :description, :search,  user: current_user)  
+    params.require(:item).permit(:image, :category, :location, :title, :price_cents, :description, :search)  
   end
 
 end

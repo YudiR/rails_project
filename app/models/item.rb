@@ -25,7 +25,7 @@ include ImageUploader[:image]
 
     
     belongs_to :user
-    has_and_belongs_to_many :users
+    # has_and_belongs_to_many :users
 
     validates :title, presence: true
     validates :price_cents, presence: true
