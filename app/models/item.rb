@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
-    # enum category: [ :electronics, :jewelry, :kitchen,  :womens_clothing, :mens_clothing, :watches,
-    # :sports_and_outdoors]
+    enum category: { Electronics: 0, Jewelry: 1, Kitchen: 2,  Womens_Clothing: 3, Mens_Clothing: 4, Watches: 5,
+    Sports_And_Outdoors: 6, Other: 7}
 
     def self.search(search)
         if search

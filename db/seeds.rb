@@ -24,10 +24,10 @@ uploader = ImageUploader.new(:store)
 file = File.new(Rails.root.join('app/assets/images/seed/sharp.jpg'))
 uploaded_file = uploader.upload(file)
 
-10.times do 
+100.times do 
     Item.create(
     title: Faker::Device.model_name,
-    category:Faker::Device.manufacturer,
+    category:Faker::Number.between(0,7),
     description: 'good',
     image_data: uploaded_file.to_json ,
     price_cents: Faker::Number.between(10, 250) ,

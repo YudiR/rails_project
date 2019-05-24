@@ -16,10 +16,11 @@
 
 
 <p>Title: <%= link_to item.title, "/items/#{item.id}" %> </p> 
-
+<% if item.image.present?%>
+ <%= link_to image_tag(item.image_url) , "/items/#{item.id}" %>
+<% end %>
 <p> Location: <%=item.location %> </p>
 
-<p> image: </p> <%= link_to image_tag(item.image_url) , "/items/#{item.id}" %>
 
 <p>Category: <%=item.category %> </p>
 

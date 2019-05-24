@@ -1,9 +1,16 @@
 <h1> Item to be Taken: <h1>
  
    <h3>Title: </h3><p> <%= @item.title %> </p> 
+   <% if @item.image.present?%>
+      <%= image_tag @item.image_url %>
+   <% end %>
    <h3>Price:</h3><p>$<%=  @item.price_cents %> </p>
-   <h3>Image:</h3>   <%= image_tag @item.image_url %>
-   <h3>Category:</h3><p><%=@item.category %> </p>
+   <h3>Category:</h3><% if @item.category == "Sports_And_Outdoors"%> <p>Sports And Outdoors</p>
+   <% elsif @item.category == "Womens_Clothing" %> <p> Womens Clothing </p>
+   <% elsif @item.category == "Mens_Clothing" %> <p> Mens Clothing </p>
+   <%else%>
+   <p> <%=item.category%> </p>
+   <%end %>
    <h3>Location: </h3><p><%= @item.location%> </p>
    <h3>Description: </h3><p><%= @item.description%> </p>
 

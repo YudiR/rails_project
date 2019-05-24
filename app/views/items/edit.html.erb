@@ -11,7 +11,7 @@
 
     <div>
       <%= f.label :Category %>
-      <%= f.text_field :category %>
+      <%= f.select(:category, options_for_select([['Electronics', 'Electronics'], ['Jewelry', "Jewelry"], ['Kitchen', 'Kitchen'], ['Womens Clothing', 'Womens_Clothing'],['Mens Clothing', 'Mens_Clothing'],['Watches', 'Watches'], ['Sports And Outdoors', 'Sports_And_Outdoors'], ['Other', 'Other']])) %>
     </div>
 
     <div>
