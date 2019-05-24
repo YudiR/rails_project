@@ -9,7 +9,7 @@
    <% elsif @item.category == "Womens_Clothing" %> <p> Womens Clothing </p>
    <% elsif @item.category == "Mens_Clothing" %> <p> Mens Clothing </p>
    <%else%>
-   <p> <%=item.category%> </p>
+   <p> <%=@item.category%> </p>
    <%end %>
    <h3>Location: </h3><p><%= @item.location%> </p>
    <h3>Description: </h3><p><%= @item.description%> </p>
