@@ -5,12 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>  
   </head>
 
   <body>
-  <header class = "header">
+  <div  class = "header"> 
+  <header>
   
     <% if current_user %>
     <%= link_to  "About" , "/items/about" %> |
@@ -25,6 +26,7 @@
     <%= link_to "Home", root_path %> 
     <% end %>
   </header>
+  </div>
 
   <% if flash[:alert] %>
     <p>Oops - there were problems with your submission. Please fix the following:</p>

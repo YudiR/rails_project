@@ -3,14 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
+.header{
+    display: flex; 
+    justify-content:flex-start ;
+}
+
+.container{
+    // background-color: lightblue;
+    // padding: 25px;
+    // display: flex;
+    // // order: <2>;
+    flex-direction: column;
+    // flex-wrap:wrap;
+    // justify-content: center;
+    // width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 img {
     width: 400px
 }
 
 .form-control {
-    width: 500px
-}
-
-.header{
-    width: 500px
+    width: 600px
 }

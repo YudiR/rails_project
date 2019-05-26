@@ -31,7 +31,7 @@ uploaded_file = uploader.upload(file)
     description: 'good',
     image_data: uploaded_file.to_json ,
     price_cents: Faker::Number.between(10, 250) ,
-    location: Faker::Address.city,
+    location: Faker::Address.state,
     user_id: User.last.id)
 end
 

@@ -37,9 +37,17 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @key = Figaro.env.google_api_key 
+        #  ENV["google_api_key"] 
+
     @item = Item.find(params[:id])
     @user = @item.user
     render :show
+
+  
+
+
+    
   end
 
   def destroy

@@ -1,3 +1,4 @@
+<div class ="container">
 <h1> Items to be Taken: <h1>
 
 
@@ -9,8 +10,8 @@
     
     
 
-    <div class="form-group"><%= f.label :category %>
-<%= f.select(:category_cont, options_for_select([['Electronics', 0], ['Jewelry', 1], ['Kitchen', 2], ['Womens Clothing', 3],['Mens Clothing', 4],['Watches', 5], ['Sports And Outdoors', 6], ['Other', 7]])) %></div>
+    <div class="form-group"><%= f.label :category %><br/>
+<%= f.select(:category_cont, options_for_select([['Choose a Category'],['Electronics', 0], ['Jewelry', 1], ['Kitchen', 2], ['Womens Clothing', 3],['Mens Clothing', 4],['Watches', 5], ['Sports And Outdoors', 6], ['Other', 7]])) %></div>
 
 <div class="form-group"><%= f.label :location %>
 <%= f.text_field :location_cont, class: 'form-control' %></div>
@@ -48,3 +49,4 @@
 
 <h1> <%= link_to  "about" , "/items/about" %> </h1>
 
+</div>

@@ -12,8 +12,10 @@
    <p> <%=@item.category%> </p>
    <%end %>
    <h3>Location: </h3><p><%= @item.location%> </p>
+   <p>
+<%=image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@item.location}&zoom=13&size=400x200&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,#{@item.location}&key=#{@key}"%> 
+</p>
    <h3>Description: </h3><p><%= @item.description%> </p>
-
 <% if @item.user == current_user%> 
 
 <p> <%= link_to "edit post" , edit_item_path(@item)%></p>
