@@ -1,24 +1,24 @@
+
+
+<div class ="title">
+<h1 class="display-2 text-white bg-dark p-3 mb-2 bg-secondary text-white"> Items to be Taken <h1>
+</div>
+<br/>
 <div class ="container">
-<h1> Items to be Taken: <h1>
-
-
 <h3> Search the Items</h3>
-
 <%= search_form_for @q do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title_cont, class: 'form-control' %>
-    
-    
-
-    <div class="form-group"><%= f.label :category %><br/>
+      <div class="form-group"><%= f.label :category %><br/>
 <%= f.select(:category_cont, options_for_select([['Choose a Category'],['Electronics', 0], ['Jewelry', 1], ['Kitchen', 2], ['Womens Clothing', 3],['Mens Clothing', 4],['Watches', 5], ['Sports And Outdoors', 6], ['Other', 7]])) %></div>
+
+<%= f.label :title %>
+    <%= f.text_field :title_cont, class: 'form-control' %>
 
 <div class="form-group"><%= f.label :location %>
 <%= f.text_field :location_cont, class: 'form-control' %></div>
 
     <div class="form-group"><%= f.label :price_cents, "Price" %>
-    <%= f.label :price_cents_qteq, "Least Amount" %><%= f.text_field :price_cents_gteq, class: 'form-control' %>
-    <%= f.label :price_cents_lteq, "Most Amount" %><%= f.text_field :price_cents_lteq, class: 'form-control' %></div>
+<%= f.label :price_cents_qteq, "Least Amount" %><%= f.text_field :price_cents_gteq, class: 'form-control' %>
+<%= f.label :price_cents_lteq, "Most Amount" %><%= f.text_field :price_cents_lteq, class: 'form-control' %></div>
 
 
     <%= f.submit class: 'btn btn-primary' %>

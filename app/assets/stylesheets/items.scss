@@ -4,19 +4,26 @@
 @import "bootstrap";
 
 .header{
+    
+    max-width: 500px;
+    margin: auto;
     display: flex; 
-    justify-content:flex-start ;
+    justify-content:space-between ;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    content: 50%;
+    justify-content:center ;
+
 }
 
 .container{
-    // background-color: lightblue;
-    // padding: 25px;
-    // display: flex;
-    // // order: <2>;
+
+    max-width: 500px;
+    margin: auto;
     flex-direction: column;
-    // flex-wrap:wrap;
-    // justify-content: center;
-    // width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -26,5 +33,5 @@ img {
 }
 
 .form-control {
-    width: 600px
+    width: 400px
 }
