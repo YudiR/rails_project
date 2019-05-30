@@ -2,6 +2,10 @@
 <h1  class="display-3 text-primary"> Item to be Taken <h1>
 </div>
 
+ <p> <%= %></p>
+ <%-# link_to "Watch / unwatch this item" , "/items/watch/#{@item.id}" -%>
+
+
  <div class = "container">
    <h3>Title: </h3><p> <%= @item.title %> </p> 
    <% if @item.image.present?%>

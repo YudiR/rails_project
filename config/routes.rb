@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       get 'about'
     end
   end
+
+  get 'items/watch/:id', :to => 'items#watch'
       
   resources :sessions, only: [:new, :create, :destroy]
 

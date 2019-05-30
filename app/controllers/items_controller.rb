@@ -39,14 +39,7 @@ class ItemsController < ApplicationController
   def show
     @key = Figaro.env.google_api_key 
     @item = Item.find(params[:id])
-    @user = @item.user
-   
-    
-
-  
-
-
-    
+    @user = @item.user    
   end
 
   def destroy
@@ -56,6 +49,20 @@ class ItemsController < ApplicationController
   end
 
   def about 
+  end
+
+  def watch
+    @item = Item.find(params[:id])
+    if current_user.watch.include?(@item)
+      current_user.watch.delete(@item)
+    
+    elsif current_user.watch.include?(@item) == false 
+      current_user.watch << @item.id
+    
+    end
+    
+    redirect_to "/items/#{@item.id}" 
+
   end
 
   def require_ownership
