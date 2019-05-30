@@ -14,14 +14,16 @@
 .title{
     display: flex;
     flex-direction: row;
-    content: 50%;
+    content: 100%;
     justify-content:center ;
-
+    max-width: 500px;
+    margin: auto;
 }
 
 .container{
 
     max-width: 500px;
+    content: 100%;
     margin: auto;
     flex-direction: column;
     display: flex;

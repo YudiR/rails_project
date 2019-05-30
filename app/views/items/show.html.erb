@@ -1,5 +1,8 @@
-<h1> Item to be Taken <h1>
- 
+<div class ="title">
+<h1  class="display-3 text-primary"> Item to be Taken <h1>
+</div>
+
+ <div class = "container">
    <h3>Title: </h3><p> <%= @item.title %> </p> 
    <% if @item.image.present?%>
       <%= image_tag @item.image_url %>
@@ -22,7 +25,10 @@
 <p> <%= link_to "delete post", item_path(@item), method: :delete %></p>
 <% end %>
 
+ 
+
 <h1> The Giver: </h1>
 
     <h3>Name:</h3><p><%=@user.name %></p>
     <h3>Email:</h3><p> <%=@user.email %></p>
+</div>
