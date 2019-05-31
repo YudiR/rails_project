@@ -5,6 +5,18 @@
 </div>
 <br/>
 <div class ="container">
+<h5> Top Item </h5>
+<% if @top && @top.image.present?%>
+    <%= link_to image_tag(@top.image_url) , "/items/#{@top.id}"  %>
+<% end %>
+<% if @top %>
+<h3>Title: </h3><h5> <%= link_to @top.title,  "/items/#{@top.id}" %>  </h5> 
+<h3>Price:</h3><p> $<%=@top.price_cents %> </p>
+<h3>Location: </h3><p><%= @top.location%> </p>
+<% end %>
+
+
+<br/> <br/> <br/>
 <h3> Search the Items</h3>
 <%= search_form_for @q do |f| %>
       <div class="form-group"><%= f.label :category %><br/>

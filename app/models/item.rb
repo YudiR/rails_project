@@ -25,7 +25,7 @@ include ImageUploader[:image]
 
     
     belongs_to :user
-    has_and_belongs_to_many :people, class_name: "Item", join_table: "people_watch", foreign_key: "Item_id", association_foreign_key: "User_id"
+    has_and_belongs_to_many :people, class_name: "User", join_table: "people_watch", foreign_key: "item_id", association_foreign_key: "user_id"
 
     validates :title, presence: true
     validates :price_cents, presence: true

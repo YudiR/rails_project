@@ -2,8 +2,23 @@ class ItemsController < ApplicationController
   before_action :require_ownership, only: [:edit, :update, :destroy]
 
   def index
+    # index and search
     @q = Item.ransack(params[:q])
     @items = @q.result
+
+    # top item
+    a = 0
+    @items = Item.all
+    @items.each do |item|
+      if item.people.length > a
+        a = item.people.length 
+       @top = item
+      end
+    end
+
+
+
+
   end
 
   def new
@@ -40,6 +55,22 @@ class ItemsController < ApplicationController
     @key = Figaro.env.google_api_key 
     @item = Item.find(params[:id])
     @user = @item.user    
+
+    if current_user && current_user.watch.include?(@item)
+      @watch = "Remove Item From Watch List"
+    elsif current_user && current_user.watch.include?(@item) == false
+      @watch = "Add Item to Watch List"
+    end
+
+    @watchers = @item.people.length
+
+  # ensuring when it says item has watcher/s the grammer is right
+    if @watchers  > 1 
+      @person = "Watchers"
+    else
+      @person = "Watcher"
+    end
+
   end
 
   def destroy
@@ -52,18 +83,22 @@ class ItemsController < ApplicationController
   end
 
   def watch
+    
     @item = Item.find(params[:id])
-    if current_user.watch.include?(@item)
+    if current_user && current_user.watch.include?(@item)
       current_user.watch.delete(@item)
     
-    elsif current_user.watch.include?(@item) == false 
-      current_user.watch << @item.id
-    
+    elsif current_user && current_user.watch.include?(@item) == false 
+      current_user.watch << @item
+
+    else 
+      flash[:alert] = "You Are Not Signed in."
     end
     
     redirect_to "/items/#{@item.id}" 
 
   end
+
 
   def require_ownership
     @item = Item.find(params[:id])

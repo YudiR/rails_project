@@ -37,14 +37,14 @@ class UsersController < ApplicationController
         redirect_to root_path
       else
         render :edit
-      end      # @user = present user 
+      end     
     end
 
     def items
-      # @items = current_user.items 
+    end
 
-       # render :items
-      # @items= @user.items
+    def watching
+    @user = current_user
     end
   
       
