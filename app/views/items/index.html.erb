@@ -1,11 +1,12 @@
 
 
 <div class ="title">
-<h1 class="display-2 text-white bg-dark p-3 mb-2 bg-secondary text-white"> Items to be Taken <h1>
+
+<%-# <h1 class="display-2 text-white bg-dark p-3 mb-2 bg-secondary text-white"> Items to be Taken <h1> -%>
 </div>
 <br/>
 <div class ="container">
-<h5> Top Item </h5>
+<h1> Top Item </h1>
 <% if @top && @top.image.present?%>
     <%= link_to image_tag(@top.image_url) , "/items/#{@top.id}"  %>
 <% end %>

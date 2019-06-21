@@ -5,9 +5,9 @@
 </br>
 </br>
 <div class = "container">
-<%= form_tag sessions_path do %>
+<%= form_tag sessions_path, :id => 'log_in', :name => 'log_in'   do  %>
 
-  <div>
+  <div class = "log_in_email">
     <%= label_tag :email %> <br />
     <%= text_field_tag :email %>
   </div>

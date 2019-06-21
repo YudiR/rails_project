@@ -1,15 +1,16 @@
 <div class ="title">
-<h1  class="display-3 text-primary"> Item to be Taken <h1>
+<%-# <h1  class="display-3 text-primary"> Item to be Taken <h1> -%>
 </div>
 
 <div class = "container">
+<h5> This Item has <%=@watchers%> <%=@person%>  </h5>
+
 <% if current_user %>
 <p><%=  link_to "#{@watch}" , "/items/watch/#{@item.id}" %> </p>
 <% else %>
 <p> <%=link_to "Sign in And Start Adding Items to Your Watch List!", new_session_path %> </p>
 <% end %>
 
- <h5> This Item has <%=@watchers%> <%=@person%>  </h5>
    <h3>Title: </h3><p> <%= @item.title %> </p> 
    <% if @item.image.present?%>
       <%= image_tag @item.image_url %>
