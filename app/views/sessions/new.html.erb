@@ -5,20 +5,22 @@
 </br>
 </br>
 <div class = "container">
-<%= form_tag sessions_path, :id => 'log_in', :name => 'log_in'   do  %>
+<%= form_tag sessions_path,  :onsubmit => "return logIn()",  :id => 'log_in', :name => 'log_in'  do  %>
 
   <div class = "log_in_email">
+    <div class = "alert_email"></div>
     <%= label_tag :email %> <br />
     <%= text_field_tag :email %>
   </div>
 
-  <div>
+  <div class = "log_in_password">
+    <div class = "alert_password"></div>
      <%= label_tag :password %><br />
      <%= password_field_tag :password %>
   </div>
 
   <div>
-    <%= submit_tag "Log In" %>
+    <%= submit_tag "Log In", data: { disable_with: false } %>
   </div>
 
 <% end %>

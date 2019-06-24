@@ -1,5 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+// alert for title#item
+function validateForm() {
+    var newItemTitle = document.querySelector("#new_item #item_title")
 
-
+    if ( newItemTitle.value == "") {
+      alert("Name must be filled out");
+      return false;
+      
+    }
+  
+}
