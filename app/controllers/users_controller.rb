@@ -36,6 +36,7 @@ class UsersController < ApplicationController
       if @user.update_attributes(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
         redirect_to root_path
       else
+        flash.now[:alert] = @user.errors.full_messages
         render :edit
       end     
     end

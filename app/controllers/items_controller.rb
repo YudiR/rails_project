@@ -48,6 +48,9 @@ class ItemsController < ApplicationController
 
     if @item.update_attributes(item_params)
       redirect_to "/items/#{@item.id}"
+    else 
+      flash.now[:alert] = @item.errors.full_messages
+      render :edit
     end
   end
 
