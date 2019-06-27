@@ -76,3 +76,30 @@ var validateUser = () => {
   }   
 
 }
+
+var validateUserEdit = () => {
+  // name
+  var nameNew = document.querySelector("#user_name");
+  var nameDiv = document.querySelector(".nameSign");
+  // email
+  var emailNew = document.querySelector("#user_email");
+  var emailDiv = document.querySelector(".emailSign");
+  if (nameNew.value === "" || emailNew.value === ""){
+    
+    nameNew.value === ""
+    ? ((nameDiv.innerHTML = " Please enter your Name"),
+      (nameDiv.style.color = "red"))
+    : null;
+
+  emailNew.value === ""
+    ? ((emailDiv.innerHTML = "Please enter your Email"),
+      (emailDiv.style.color = "red"))
+    : null;    
+
+    nameNew.value !== "" ? (nameDiv.innerHTML = null) : null;
+    emailNew.value !== "" ? (emailDiv.innerHTML = null) : null;
+
+    return false
+  }
+
+}

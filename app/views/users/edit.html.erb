@@ -3,8 +3,9 @@
 </div>
 
 <div class = "container">
-<%= form_for @user do |f|%>
+<%= form_for @user, :html=> {:onsubmit => "return validateUserEdit()"}  do |f|%>
     <div>
+    <div class = "nameSign"> </div> 
     <p>
     <%=f.label :name%><br>
     <%=f.text_field :name %>
@@ -12,6 +13,7 @@
     </div>
 
     <div>
+    <div class = "emailSign"> </div> 
     <%= f.label :email %> <br/>
     <%= f.text_field :email %>
     </div>
@@ -27,7 +29,7 @@
     </div>
   
     <div>
-      <%= f.submit "Update" %>
+      <%= f.submit "Update", data: { disable_with: false } %>
     </div>
 
 <% end %>
