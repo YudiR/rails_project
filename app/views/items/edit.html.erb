@@ -6,12 +6,15 @@
 <br/> <br/> <br/>
 
 <div class = "container">
-<%= form_for @item do |f| %>
-    <div>
+<%= form_for @item, :html=> {:onsubmit => "return validateItem()"} do |f| %>
+  
+  <div class = "titleNew"></div>  
+  <div>
       <%= f.label :Title %>
       <%= f.text_field :title %>
     </div>
 
+    <div class = "locationNew"></div>
     <div>
     <%= f.label :Location %>
     <%= f.text_field :location %>
@@ -30,17 +33,19 @@
       <%= f.select(:category, options_for_select([['Electronics', 'Electronics'], ['Jewelry', "Jewelry"], ['Kitchen', 'Kitchen'], ['Womens Clothing', 'Womens_Clothing'],['Mens Clothing', 'Mens_Clothing'],['Watches', 'Watches'], ['Sports And Outdoors', 'Sports_And_Outdoors'], ['Other', 'Other']])) %>
     </div>
 
+    <div class = "priceNew"></div>
     <div>
     <%= f.label :Price %>
     <%= f.text_field :price_cents %>
   </div>
 
+  <div class = "descriptionNew"></div>
     <div>
       <%= f.label :Description %>
       <%= f.text_area :description %>
     </div>
   
-    <%= f.submit %>
+    <%= f.submit data: { disable_with: false }  %>
   <% end %>
 
   </div>
