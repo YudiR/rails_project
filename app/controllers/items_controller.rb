@@ -65,10 +65,10 @@ class ItemsController < ApplicationController
     @watchers = @item.people.length
 
   # ensuring when it says item has watcher/s the grammer is right
-    if @watchers  > 1 
-      @person = "Watchers"
-    else
+    if @watchers  == 1 
       @person = "Watcher"
+    else
+      @person = "Watchers"
     end
 
   end

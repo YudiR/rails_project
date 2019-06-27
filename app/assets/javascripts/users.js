@@ -43,7 +43,8 @@ var validateUser = () => {
   var passwordConfirmationNew = document.querySelector("#user_password_confirmation");
   var passwordConfirmationDiv = document.querySelector(".passwordConfirmationSign");
 
-  if (nameNew.value === "" || emailDiv.value === "" || passwordNew.value === "" || passwordConfirmationNew.value === "") {
+  // Use control find!!!!!!!!!!!
+  if (nameNew.value === "" || emailNew.value === "" || passwordNew.value === "" || passwordConfirmationNew.value === "") {
     nameNew.value === ""
       ? ((nameDiv.innerHTML = " Please enter your Name"),
         (nameDiv.style.color = "red"))
