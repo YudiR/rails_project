@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do
       get 'items'
       get 'watching'
+   
       end
     end
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   get 'items/watch/:id', :to => 'items#watch'
-      
+  get 'users/:id', :to => 'users#sign_out'   
   resources :sessions, only: [:new, :create, :destroy]
 
   root 'items#index'
