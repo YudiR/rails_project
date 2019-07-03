@@ -2,6 +2,7 @@
 <%-# <h1  class="display-3 text-primary"> Item to be Taken <h1> -%>
 </div>
 
+<br/><br/><br/>
 <div class = "container">
 <h5> This Item has <%=@watchers%> <%=@person%>  </h5>
 
@@ -10,6 +11,8 @@
 <% else %>
 <p> <%=link_to "Sign in And Start Adding Items to Your Watch List!", new_session_path %> </p>
 <% end %>
+
+<input type = "hidden" value = <%= @item.id %> id = "hidden_watch" />
 
    <h3>Title: </h3><p> <%= @item.title %> </p> 
    <% if @item.image.present?%>
@@ -22,6 +25,8 @@
    <%else%>
    <p> <%=@item.category%> </p>
    <%end %>
+
+
    <h3>Location: </h3><p><%= @item.location%> </p>
    <p>
 <%=image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@item.location}&zoom=13&size=400x200&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,#{@item.location}&key=#{@key}"%> 

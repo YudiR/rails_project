@@ -98,7 +98,8 @@ class ItemsController < ApplicationController
       flash[:alert] = "You Are Not Signed in."
     end
     
-    redirect_to "/items/#{@item.id}" 
+    render: json @item.user.length
+    # redirect_to "/items/#{@item.id}" 
 
   end
 
