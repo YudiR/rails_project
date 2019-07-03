@@ -88,6 +88,14 @@ class ItemsController < ApplicationController
   def watch
     
     @item = Item.find(params[:id])
+    @watchers = @item.people.length
+    if @watchers  == 1 
+      @person = "Watcher"
+    else
+      @person = "Watchers"
+    end
+
+    
     if current_user && current_user.watch.include?(@item)
       current_user.watch.delete(@item)
     
@@ -98,8 +106,17 @@ class ItemsController < ApplicationController
       flash[:alert] = "You Are Not Signed in."
     end
     
-    render: json @item.user.length
+    # render json: @item.user.length
     # redirect_to "/items/#{@item.id}" 
+
+    respond_to do |format|
+      format.json do 
+        puts ".............response format as json"
+        render json: @item.people.length
+      end
+
+
+    end
 
   end
 
