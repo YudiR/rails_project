@@ -7,7 +7,6 @@
 <h5 class = "h5_watchers"> This Item has <%=@watchers%> <%=@person%>  </h5>
 
 <% if current_user %>
-<p><%=  link_to "#{@watch}" , "/items/watch/#{@item.id}" %> </p>
 <button id = "button" type='button'> <%="#{@watch}"%></button>
 <% else %>
 <p> <%=link_to "Sign in And Start Adding Items to Your Watch List!", new_session_path %> </p>
