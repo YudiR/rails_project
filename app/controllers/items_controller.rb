@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :require_ownership, only: [:edit, :update, :destroy]
+ 
 
   def index
     # index and search

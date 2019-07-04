@@ -11,7 +11,7 @@
 
 // }
 
-// New Items Form::::::::
+// New Items Form:::::::: 
 var validateItem = () => {
   // Title:
   var titleNew = document.querySelector(" #item_title");
