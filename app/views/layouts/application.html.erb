@@ -34,7 +34,7 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <% if current_user %>
       <li class="nav-item ">
-      <a class="nav-link"  data-method="delete" href= "sessions/<%= current_use%>" > Logout <span class="sr-only">(current)</span></a> <form method="delete">
+      <a class="nav-link"  data-method="delete" href="/sessions/<%= current_user.id %>" > Logout <span class="sr-only">(current)</span></a> <form method="delete">
       </li>
 
     <li class="nav-item ">
