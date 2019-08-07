@@ -9,8 +9,8 @@ class ItemsController < ApplicationController
 
     # top item
     a = 0
-    @items = Item.all
-    @items.each do |item|
+    @itemz = Item.all
+    @itemz.each do |item|
       if item.people.length > a
         a = item.people.length 
        @top = item
