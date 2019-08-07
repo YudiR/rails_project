@@ -12,6 +12,8 @@
 <p> <%=link_to "Sign in And Start Adding Items to Your Watch List!", new_session_path %> </p>
 <% end %>
 
+
+
 <input type = "hidden" value = <%= @item.id %> id = "hidden_watch" />
    <h3>Title: </h3><p> <%= @item.title %> </p> 
    <% if @item.image.present?%>
