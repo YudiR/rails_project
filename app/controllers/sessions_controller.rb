@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to root_path
       else
-        flash.now[:alert] = "Login failed. Name or password are incorrect. Please try again"
+        flash.now[:alert] = " <br/> Login failed. Name or password are incorrect. Please try again".html_safe
         render :new
       end
     end
