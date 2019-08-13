@@ -5,8 +5,8 @@
 </div>
 
 <div class = "container">
-<%= form_for  @item, :html=> {:onsubmit => "return validateItem()"} do  |f|  %>
-   <div class = "titleNew"></div>
+<%= form_for @item, :html=> {:onsubmit => " validateItem()"} do  |f|  %>
+  <div class = "titleNew"></div>
     <div>
       <%= f.label :Title %>
       <%= f.text_field :title %>
@@ -45,7 +45,7 @@
       <%= f.text_area :description %>
     </div>
   
-    <%= f.submit data: { disable_with: false } %>
+    <%= f.submit "Create Item", data:  { disable_with: false } %>
   <% end %>
   
   </div>

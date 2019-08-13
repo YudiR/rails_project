@@ -13,6 +13,7 @@
 
 // New Items Form:::::::: 
 var validateItem = () => {
+  
   // Title:
   var titleNew = document.querySelector(" #item_title");
   var titleDiv = document.querySelector(".titleNew");
@@ -32,6 +33,7 @@ var validateItem = () => {
     locationNew.value === "" ||
     descriptionNew.value === ""
   ) {
+    
     titleNew.value === ""
       ? ((titleDiv.innerHTML = " Please enter a Title"),
         (titleDiv.style.color = "red"))
@@ -56,8 +58,11 @@ var validateItem = () => {
     priceNew.value !== "" ? (priceDiv.innerHTML = null) : null;
     locationNew.value !== "" ? (locationDiv.innerHTML = null) : null;
     descriptionNew.value !== "" ? (descriptionDiv.innerHTML = null) : null;
-
+    event.preventDefault()
     return false;
+  }
+  else{
+    return true
   }
 };
 

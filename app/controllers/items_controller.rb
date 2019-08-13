@@ -31,11 +31,10 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      flash.now[:alert] = @item.errors.full_messages
       redirect_to root_path
     else
+      puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#{@item.errors.full_messages}"
       flash.now[:alert] = @item.errors.full_messages
-
       render :new
     end
   end
