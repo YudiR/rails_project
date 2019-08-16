@@ -5,8 +5,6 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -27,12 +25,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 # gem 'httparty'
 gem 'figaro'
 
-# gem 'money-rails', '~> 1.12'
 
 # below for search
 gem 'faker'
@@ -49,6 +45,19 @@ gem "shrine", "~> 2.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+group :development do
+  gem 'sqlite3', '~> 1.3.6'
+end
+
+group :production do
+  gem 'pg', '0.21.0'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
