@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// below is added
+//= require js-datepicker/datepicker.min
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
