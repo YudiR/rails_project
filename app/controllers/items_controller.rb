@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#{@item.errors.full_messages}"
-      flash.now[:alert] = @item.errors.full_messages
+      flash.now[:alert] = "<br/>#{@item.errors.full_messages}".html_safe
       render :new
     end
   end
@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
     if @item.update_attributes(item_params)
       redirect_to "/items/#{@item.id}"
     else 
-      flash.now[:alert] = @item.errors.full_messages
+      flash.now[:alert] = "<br/>#{@item.errors.full_messages}".html_safe
       render :edit
     end
   end
@@ -103,7 +103,7 @@ class ItemsController < ApplicationController
       current_user.watch << @item
 
     else 
-      flash[:alert] = "You Are Not Signed in."
+      flash[:alert] = "<br/>You Are Not Signed in.".html_safe
     end
     
     # render json: @item.user.length
@@ -125,7 +125,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     
     unless current_user == @item.user
-      flash[:alert] = "You are not the user of this account"
+      flash[:alert] = " <br/> You are not the user of this account".html_safe
       redirect_to root_path
     end
   end

@@ -19,7 +19,8 @@ class UsersController < ApplicationController
         redirect_to root_path
       
       else
-        flash.now[:alert] = @user.errors.full_messages
+        flash.now[:alert] = "<br/><br/> #{@user.errors.full_messages}".html_safe
+        puts "#{@user.errors.full_messages}"
         render :new
       end
     end
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
       if @user.update_attributes(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
         redirect_to root_path
       else
-        flash.now[:alert] = @user.errors.full_messages
+        flash.now[:alert] = "<br/> #{@user.errors.full_messages}".html_safe
         render :edit
       end     
     end
