@@ -11,9 +11,8 @@
 
 // }
 
-// New Items Form:::::::: 
+// New Items Form::::::::
 var validateItem = () => {
-  
   // Title:
   var titleNew = document.querySelector(" #item_title");
   var titleDiv = document.querySelector(".titleNew");
@@ -33,7 +32,6 @@ var validateItem = () => {
     locationNew.value === "" ||
     descriptionNew.value === ""
   ) {
-    
     titleNew.value === ""
       ? ((titleDiv.innerHTML = " Please enter a Title"),
         (titleDiv.style.color = "red"))
@@ -58,11 +56,10 @@ var validateItem = () => {
     priceNew.value !== "" ? (priceDiv.innerHTML = null) : null;
     locationNew.value !== "" ? (locationDiv.innerHTML = null) : null;
     descriptionNew.value !== "" ? (descriptionDiv.innerHTML = null) : null;
-    event.preventDefault()
+    event.preventDefault();
     return false;
-  }
-  else{
-    return true
+  } else {
+    return true;
   }
 };
 
@@ -71,22 +68,29 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(`hey ${number.value}`);
 
   var button = document.querySelector("#button");
-  button.addEventListener("click", (e) => {
-    console.log(e)
+  button.addEventListener("click", e => {
+    console.log("e", e);
     console.log(button.innerText);
-    var change_watcher = button.innerText === "Add Item to Watch List" ? 
-    "Remove Item From Watch List" : "Add Item to Watch List";
-
-    fetch(`/items/watch/${number.value}`).then(res=> res.json())
-    .then(function(response){
-      
-      console.log("Success::",response);
-      var people = response === 1 ? "watcher" : "watchers" 
-      var h5 = document.querySelector(".h5_watchers")
-      h5.innerText = `This Item Has ${response} ${people} ` 
-
-      button.innerText = `${change_watcher}`
-    })
+    var change_watcher =
+      button.innerText === "Add Item to Watch List"
+        ? "Remove Item From Watch List"
+        : "Add Item to Watch List";
     
+    fetch(`/items/watch/${number.value}`)
+      .then(res => res.json())
+      .then(function(response) {
+        console.log("Success::", response);
+        var people = response === 2 && button.innerText === "Remove Item From Watch List"
+        || response === 0 && button.innerText === "Add Item to Watch List"
+        ? "watcher" : "watchers";
+      
+        let TotalWatchers = button.innerText === "Add Item to Watch List" ?
+        response + 1 : response - 1
+
+        var h5 = document.querySelector(".h5_watchers");
+        h5.innerText = `This Item Has ${TotalWatchers} ${people} `;
+
+        button.innerText = `${change_watcher}`;
+      });
   });
 });

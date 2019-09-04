@@ -15,6 +15,7 @@
 
 
 <input type = "hidden" value = <%= @item.id %> id = "hidden_watch" />
+
    <h3>Title: </h3><p> <%= @item.title %> </p> 
    <% if @item.image.present?%>
       <%= image_tag @item.image_url %>
