@@ -37,7 +37,7 @@ gem 'ransack'
 # gem 'will_paginate-bootstrap4'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem "shrine", "~> 2.0"
+gem "shrine", "~> 3.3"
 
 
 # Use Capistrano for deployment
